@@ -1,0 +1,13 @@
+# data_scraped
+
+scraped/
+
+# urls
+
+src/
+
+# others
+
+__pycache__
+
+/.venv
