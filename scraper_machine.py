@@ -18,25 +18,25 @@ def scrape_and_save_offers(url):
         policy_accept.click()
 
         # Find elements containing single offer price, description, and link
-        single_offer_price = driver.find_elements(By.CSS_SELECTOR,
+        price = driver.find_elements(By.CSS_SELECTOR,
                                                   "div[data-testid='listing-item-header'] span.e1a3ad6s0")
-        second = driver.find_elements(By.CSS_SELECTOR, "p[data-testid='advert-card-address']")
-        third = driver.find_elements(By.CSS_SELECTOR, "a[data-testid='listing-item-link']")
+        street = driver.find_elements(By.CSS_SELECTOR, "p[data-testid='advert-card-address']")
+        desc = driver.find_elements(By.CSS_SELECTOR, "a[data-testid='listing-item-link']")
 
         # Print lengths for debugging
-        print(len(single_offer_price))
-        print(len(second))
-        print(len(third))
+        print(len(price))
+        print(len(street))
+        print(len(desc))
 
-        if len(single_offer_price) > 0:
+        if len(price) > 0:
             # Prepare data for saving
             all_offers = {}
-            for n in range(len(single_offer_price)):
+            for n in range(len(price)):
                 all_offers[n] = {
-                    "name": single_offer_price[n].text,
-                    "last": second[n].text,
-                    "link": third[n].text,
-                    "fourth": third[n].get_attribute("href")
+                    "price": price[n].text,
+                    "street": street[n].text,
+                    "desc": desc[n].text,
+                    "link": desc[n].get_attribute("href")
                 }
 
             # Convert to string

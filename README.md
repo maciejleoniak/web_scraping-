@@ -8,11 +8,8 @@ It allows me to be a better test engineer.
 
 ## Techstack
 1. Python3
-2. Selenium
+2. Selenium WebDriver 
 
 ## Desription
 The scripts allow data to be scraped from a popular flat-buying service. 
 
-## Things to do:
-1. POM
-2. Extracting data to a .csv file with visualisations
