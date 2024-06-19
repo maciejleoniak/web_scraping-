@@ -19,10 +19,10 @@ def scrape_and_save_offers(url, csv_file_path):
         policy_accept.click()
 
         # Find elements containing single offer price, description, and link
-        prices = driver.find_elements(By.XPATH, "//div[@data-testid='listing-item-header']//span[@direction='horizontal']")
-        streets = driver.find_elements(By.CSS_SELECTOR, "p[data-testid='advert-card-address']")
-        descs = driver.find_elements(By.CSS_SELECTOR, "a[data-testid='listing-item-link']")
-
+        prices = driver.find_elements(By.XPATH, "//article[@data-cy='listing-item']//span[@direction='horizontal']")
+        streets = driver.find_elements(By.XPATH, "//p[contains(@class, 'css-1dvtw4c eejmx80')]")
+        descs = driver.find_elements(By.XPATH, "//a[@data-cy='listing-item-link']")
+      
         # Print lengths for debugging
         print(len(prices))
         print(len(streets))
