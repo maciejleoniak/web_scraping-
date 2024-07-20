@@ -20,9 +20,9 @@ def scrape_and_save_offers(url, csv_file_path):
 
         # Find elements containing single offer price, description, and link
         prices = driver.find_elements(By.XPATH, "//article[@data-cy='listing-item']//span[@direction='horizontal']")
-        streets = driver.find_elements(By.XPATH, "//p[contains(@class, 'css-1dvtw4c eejmx80')]")
+        streets = driver.find_elements(By.XPATH, "//p[contains(@class, 'css-42r2ms eejmx80')]")
         descs = driver.find_elements(By.XPATH, "//a[@data-cy='listing-item-link']")
-      
+     
         # Print lengths for debugging
         print(len(prices))
         print(len(streets))
